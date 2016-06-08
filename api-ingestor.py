@@ -5,7 +5,7 @@ import configparser, os
 from pymongo import MongoClient
 
 config = configparser.RawConfigParser()
-config.read('configuration.cfg')
+config.read('/Users/mcf/configuration.cfg')
 
 svnroot = config.get('SVN', 'root')
 

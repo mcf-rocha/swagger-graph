@@ -7,7 +7,7 @@ import configparser, os
 from pymongo import MongoClient
 
 config = configparser.RawConfigParser()
-config.read('configuration.cfg')
+config.read('/Users/mcf/configuration.cfg')
 
 mongohost = config.get('MongoDB', 'host')
 mongoport = config.getint('MongoDB', 'port')
@@ -24,7 +24,7 @@ def getURLs():
     mongodb = mongoclient.catlog
     reducer = Code("""function(currentObject,initialObject){
                                 for(var key in currentObject.paths) {
-                                    if(initialObject.results[key.trim().toLowerCase()]==undefined && currentObject._id == 'Assinatura.json'){
+                                    if(initialObject.results[key.trim().toLowerCase()]==undefined && (currentObject._id == 'PetStore.json' || currentObject._id == 'Instagram.json' || currentObject._id == 'Twitter.json')){
                                         initialObject.results[key.trim().toLowerCase()]=currentObject._id;
                                     };
                                 };
