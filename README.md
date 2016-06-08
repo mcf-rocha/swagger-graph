@@ -17,7 +17,7 @@ A graph visualization of how all API's URLs are structured, with an user friendl
 
 ## How graphs look like?
 
-Blue nodes represent API resources. Dashed nodes are parameters.
+Blue nodes represent API resources. Dashed nodes are path parameters.
 Colors can be easily customized.
 
 ### Graph from one Swagger API
