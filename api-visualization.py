@@ -24,7 +24,7 @@ def getURLs():
     mongodb = mongoclient.catlog
     reducer = Code("""function(currentObject,initialObject){
                                 for(var key in currentObject.paths) {
-                                    if(initialObject.results[key.trim().toLowerCase()]==undefined && (currentObject._id == 'PetStore.json' || currentObject._id == 'Instagram.json' || currentObject._id == 'Twitter.json')){
+                                    if(initialObject.results[key.trim().toLowerCase()]==undefined && (currentObject._id == 'PetStore.json')){
                                         initialObject.results[key.trim().toLowerCase()]=currentObject._id;
                                     };
                                 };
