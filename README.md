@@ -1,5 +1,5 @@
 # swagger-graph
-Generates a graph visualisation from Paths in swagger-based RESTful APIs definitions.
+Generates a graph visualisation from Paths in swagger-based (aka OpenAPI) RESTful APIs definitions.
 
 
 ## What is it for?
