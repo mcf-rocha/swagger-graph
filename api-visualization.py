@@ -16,6 +16,7 @@ svggraphfile = '/Library/WebServer/Documents/grafico'
 
 apidomainname = config.get('Graph', 'root-node-label')
 graphlabel = config.get('Graph', 'title')
+APIname = config.get('Graph', 'API-name')
 
 endnodename = "/"
 
@@ -24,7 +25,7 @@ def getURLs():
     mongodb = mongoclient.catlog
     reducer = Code("""function(currentObject,initialObject){
                                 for(var key in currentObject.paths) {
-                                    if(initialObject.results[key.trim().toLowerCase()]==undefined && (currentObject._id == 'PetStore.json')){
+                                    if(initialObject.results[key.trim().toLowerCase()]==undefined && (currentObject._id == '"""+APIname+"""')){
                                         initialObject.results[key.trim().toLowerCase()]=currentObject._id;
                                     };
                                 };
@@ -129,8 +130,7 @@ for aresta, grafoaresta in arestas.items():
 
 
 
-g.view()
+#g.view()
+#print(g)
 
-print(g)
-
-#filename = g1.render(filename=svggraphfile)
+filename = g.render(filename=APIname.split(".")[0])
